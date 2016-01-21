@@ -1,8 +1,5 @@
 ﻿namespace PuzzleMat
 
-open FParsec
-open System.Numerics
-
 module Types = 
 
     type Row = string
@@ -34,3 +31,5 @@ module Funs =
                 |> Array.map snd)
 
         { Rows = rows ; Columns = cols }
+
+    let 
