@@ -1,9 +1,9 @@
-﻿#r "/Users/davidgross/Projects/PuzzleMat/packages/FParsec.1.0.2/lib/net40-client/FParsecCS.dll"
-#r "/Users/davidgross/Projects/PuzzleMat/packages/FParsec.1.0.2/lib/net40-client/FParsec.dll"
-#load "PuzzleMat.fs"
+﻿#load "PuzzleMat.fs"
 #load "WordList.fsx"
 
 open PuzzleMat.Funs
+open PuzzleMat.Language
+open PuzzleMat.Parsing
 open PuzzleMat.Types
 open System
 open WordList
@@ -18,9 +18,8 @@ let scramble (letters:string) =
         scrambled <- scrambled.Replace(I,'*').Replace(J,I).Replace('*',J)
     scrambled
 
-let abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-let mat = scramble abc
-let grid = Reshape mat 6
+let mat = Reshape (scramble "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789") 6
+let randomScore = ScoreGrid mat WordLists
 
-let actual = "8FROGS69PHUX5WACKZ2B0NEY4D3V1L7QTJIM"
-ScoreGrid (Reshape actual 6) WordLists
+let actual = Reshape "8FROGS69PHUX5WACKZ2B0NEY4D3V1L7QTJIM" 6
+let actualScore = ScoreGrid actual WordLists

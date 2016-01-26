@@ -21,7 +21,8 @@
     <DebugSymbols>false</DebugSymbols>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
-    <DefineConstants></DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <Externalconsole>true</Externalconsole>
     <GenerateTailCalls>true</GenerateTailCalls>
@@ -33,23 +34,15 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
-    <Reference Include="FParsec">
-      <HintPath>..\packages\FParsec.1.0.2\lib\net40-client\FParsec.dll</HintPath>
-    </Reference>
-    <Reference Include="FParsecCS">
-      <HintPath>..\packages\FParsec.1.0.2\lib\net40-client\FParsecCS.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="PuzzleMat.fs" />
-    <Compile Include="Program.fs" />
     <None Include="WordList.fsx" />
+    <Compile Include="PuzzleMat.fs" />
     <Compile Include="ComputeScore.fsx" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.1\Framework\v4.0\Microsoft.FSharp.Targets" />
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="12dicts-5.0\ReadmeR5.html" />
     <None Include="12dicts-5.0\readme.html" />
     <None Include="12dicts-5.0\2of12inf.txt" />
