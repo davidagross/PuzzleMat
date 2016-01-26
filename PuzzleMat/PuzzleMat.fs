@@ -1,5 +1,7 @@
 ﻿namespace PuzzleMat
 
+open FParsec
+
 module Types = 
 
     type Row = string
@@ -32,4 +34,11 @@ module Funs =
 
         { Rows = rows ; Columns = cols }
 
-    let 
+    let ScoreString (s:string) (wordLists:string[][]) = 
+        0
+
+    let ScoreGrid (grid:Grid) (wordLists:string[][]) = 
+        let scoreSentenceArray = Array.fold (fun (i:int) (s:string) -> i + ScoreString s wordLists) 0
+        let rowScore = scoreSentenceArray grid.Rows
+        let colScore = scoreSentenceArray grid.Columns
+        100.0*((float)rowScore + (float)colScore)/((float)grid.Rows.Length + (float)grid.Columns.Length)

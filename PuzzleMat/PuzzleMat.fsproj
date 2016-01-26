@@ -21,8 +21,7 @@
     <DebugSymbols>false</DebugSymbols>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
-    <DefineConstants>
-    </DefineConstants>
+    <DefineConstants></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <Externalconsole>true</Externalconsole>
     <GenerateTailCalls>true</GenerateTailCalls>
@@ -45,7 +44,8 @@
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="PuzzleMat.fs" />
     <Compile Include="Program.fs" />
-    <Compile Include="Words.fsx" />
+    <None Include="WordList.fsx" />
+    <Compile Include="ComputeScore.fsx" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.1\Framework\v4.0\Microsoft.FSharp.Targets" />
   <ItemGroup>
