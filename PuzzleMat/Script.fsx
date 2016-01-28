@@ -1,4 +1,9 @@
-﻿#load "PuzzleMat.fs"
+﻿#load "Types.fs"
+#load "Parsing.fs"
+#load "Language.fs"
+#load "Scoring.fs"
+#load "Manipulation.fs"
+#load "Optimize.fs"
 #load "WordList.fsx"
 
 open PuzzleMat
@@ -31,3 +36,9 @@ let randomScore = Scoring.ScoreGrid mat WordLists
 
 let actual = Manipulation.Reshape "8FROGS69PHUX5WACKZ2B0NEY4D3V1L7QTJIM" 6
 let actualScore = Scoring.ScoreGrid actual WordLists
+
+let found = Manipulation.Reshape "8XFH62Z9P45DWANGBIEQCJUV1703ORMLKSYT" 6
+let foundScore = Scoring.ScoreGrid found WordLists
+
+let best = Optimize.GridManipulation.IterateRule mat WordLists Optimize.GridManipulation.MergeRowsAndColumns;;
+let bestScore = Scoring.ScoreGrid best WordLists

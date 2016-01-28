@@ -38,8 +38,13 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <None Include="WordList.fsx" />
-    <Compile Include="PuzzleMat.fs" />
+    <Compile Include="Types.fs" />
+    <Compile Include="Parsing.fs" />
+    <Compile Include="Language.fs" />
+    <Compile Include="Scoring.fs" />
+    <Compile Include="Manipulation.fs" />
     <Compile Include="Script.fsx" />
+    <Compile Include="Optimize.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.1\Framework\v4.0\Microsoft.FSharp.Targets" />
   <ItemGroup>
