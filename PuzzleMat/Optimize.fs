@@ -15,12 +15,14 @@ module Optimize =
             while continueLooping do
                 let thisGrid = rule (bestGrid, rnd)
                 let thisScore = Scoring.ScoreGrid thisGrid wordLists
+                count <- count + 1
+                if thisScore > bestScore then count <- 0
                 if thisScore >= bestScore then
                     bestScore <- thisScore
                     bestGrid <- thisGrid
                     Manipulation.print bestGrid
                     printf " ... with score of %f\n" thisScore
-                if thisScore > 50.0 then
+                if thisScore > 85.0 || count > grid.Rows.Length * grid.Rows.Length * grid.Columns.Length * grid.Columns.Length then
                     continueLooping <- false
             bestGrid    
 

@@ -34,11 +34,16 @@ let scramble (letters:string) =
 let mat = Manipulation.Reshape (scramble "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789") 6
 let randomScore = Scoring.ScoreGrid mat WordLists
 
-let actual = Manipulation.Reshape "8FROGS69PHUX5WACKZ2B0NEY4D3V1L7QTJIM" 6
+let first   = "8XFH62Z9P45DWANGBIEQCJUV1703ORMLKSYT"
+let another = "CA914RJ825KMWSH0BQLEU3GTYNVOPDF7ZX6I"
+let badger  = "07KU5HGBTSZY34NJOX169ELCPWVDFI2RQMA8"
+let second  = "69PHUXVADGES18KLIT4JO735WMBFQR2COYNZ"
+let third   = "HMT2FR1P5ANY938ELWK70CIVQ6DJOUX4BGSZ"
+
+let actual = Manipulation.Reshape third 6
 let actualScore = Scoring.ScoreGrid actual WordLists
 
-let found = Manipulation.Reshape "8XFH62Z9P45DWANGBIEQCJUV1703ORMLKSYT" 6
-let foundScore = Scoring.ScoreGrid found WordLists
+let badgerScore = Scoring.ScoreGrid (Manipulation.Reshape badger 6) WordLists
 
 let best = Optimize.GridManipulation.IterateRule mat WordLists Optimize.GridManipulation.MergeRowsAndColumns;;
 let bestScore = Scoring.ScoreGrid best WordLists
